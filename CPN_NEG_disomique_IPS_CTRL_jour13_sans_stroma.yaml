@@ -1,0 +1,50 @@
+Steps: ["Alignment_countTable_GE","Droplets_QC_GE","Filtering_GE","Norm_DimRed_Eval_GE","Clust_Markers_Annot_GE","Cerebro"]
+
+Tmp: "/path/to/th/tmp" 
+
+############################################ GE (RNA) ############################################
+
+Alignment_countTable_GE:
+### Project
+  sample.name.ge : ["CPN_NEG"]
+  input.dir.ge : "/path/to/the/fastq/"
+  output.dir.ge : "/path/to/the/fastq/test_pipeline_v1/"
+  sctech : "10xv3"
+  kindex.ge : "/path/to/the/database/bioinfo/single-cell/INDEX/KB-python_KALLISTO/0.24.4_0.46.2/homo_sapiens/GRCh38/Ensembl/r99/cDNA_LINCs_MIRs/GRCH38_r99_cDNA_linc_mir.kidx"
+  tr2g.file.ge : "/path/to/the/database/bioinfo/single-cell/INDEX/KB-python_KALLISTO/0.24.4_0.46.2/homo_sapiens/GRCh38/Ensembl/r99/cDNA_LINCs_MIRs/GRCH38_r99_cDNA_linc_mir_tr2gs.txt"
+  reference.txt: "Ensembl reference transcriptome v99 corresponding to the homo sapiens GRCH38 build"
+
+Droplets_QC_GE:
+  author.name : "NAME"
+  author.mail : "mailadress"
+  species : "homo_sapiens"
+  emptydrops.fdr : "1E-03"
+  droplets.limit : "1E+05"
+  translation : TRUE
+  pcmito.min : 0
+  pcmito.max : 0.2
+  pcribo.min : 0
+  pcribo.max : 1
+  min.features : 200
+  min.counts : 1000
+  min.cells : 5
+ 
+Filtering_GE:
+  doublets.filter.method : "all"
+
+Norm_DimRed_Eval_GE:
+  eval.markers : "NFE2,GATA1,HBA1,GYPA,KLF1,GP9,TUBB1,ITGA2B,FCN1,MNDA,VCAN,GATA2,TPSAB1,HPGDS"
+  dims.max : 90
+  res.max : 1.6
+
+Clust_Markers_Annot_GE:
+  keep.dims : 59
+  keep.res : 1.3
+  markfile : "/path/to/markers1.xlsx"
+
+Cerebro :
+  input.rda : ["/path/to/the/fastq/test_pipeline_v1/CPN_NEG_GE/F200_C1000_M0-0.2_R0-1_G5/DOUBLETSFILTER_all/SCTransform/pca/dims59_res1.3/CPN_NEG_GE_SCTransform_pca_59_1.3.rda"]  
+  author.name : "NAME"
+  gmt.file : "/path/to/the/pipelines/single-cell/1.3/resources/DATABASE/MSIGDB/7.1/msigdb_v7.1_GMTs/msigdb.v7.1.symbols.gmt"
+
+
