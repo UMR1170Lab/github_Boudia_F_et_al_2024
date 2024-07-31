@@ -8,7 +8,6 @@ Fastqs were handled using the Single Cell pipeline of Gustave Roussy (v1.3). All
 
  
 | Sample | Number of PCA dimensions | Resolution for the clustering |
-|--------|--------------------------|-------------------------------|
 |CPN CTRL 1| 59 | 1.3 |
 |----------|----|-----|
 |CPN CTRL 2| 81 | 1.5 |
