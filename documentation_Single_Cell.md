@@ -8,6 +8,7 @@ Fastqs were handled using the Single Cell pipeline of Gustave Roussy (v1.3). All
 
  
 | Sample | Number of PCA dimensions | Resolution for the clustering |
+|--------|--------------------------|-------------------------------|
 |CPN CTRL 1| 59 | 1.3 |
 |----------|----|-----|
 |CPN CTRL 2| 81 | 1.5 |
@@ -24,5 +25,19 @@ Fastqs were handled using the Single Cell pipeline of Gustave Roussy (v1.3). All
 |------------------|----|-----|
 |patient (GHER) | 95 | 0.9 |
 |---------------|----|-----|
-|patient (JER) | 75 | 0.1 |
-|--------------|---- |----|
+|patient CONECT| 73 |1.4|
+
+An example of the files used to launch the pipeline is provided in this branch : run_CPN_NEG_disomique_IPS_CTRL_jour13_sans_stroma.sh and CPN_NEG_disomique_IPS_CTRL_jour13_sans_stroma.yaml
+
+For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in patient samples. For this reason, we have identified cells of the immune infiltrate in these samples and removed them (removal of these cells in the unormalized matrix without bad quality cells). The single-cell pipeline was launched again starting from the unormalized matrix without immune cells and bad quality cells. The table below gives the number of pca dimensions and the resolution of the clustering kept for each patient's sample without cells of the immune infiltrate.
+
+| Sample | Number of PCA dimensions | Resolution of the clustering |
+|--------|--------------------------|------------------------------|
+|patient 1 (AML64) | 77 | 0.8 |
+|------------------|----|-----|
+|patient 2 (GHER) | 91 | 0.8 |
+|------------------|----|-----|
+|patient 3 (CONECT) | 93 | 0.8 |
+|-------------------|----|-----|
+
+ 
