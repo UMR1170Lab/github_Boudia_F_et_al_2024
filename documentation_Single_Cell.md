@@ -29,5 +29,12 @@ For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in p
 |patient 2 (GHER) | 91 | 0.8 |
 |patient 3 (CONECT) | 93 | 0.8 |
 
+## Integration of all the Single-Cell samples
+
+Once all samples that we wanted to integrate have been properly handled (generation of a normalized matrix and removal of cells belonging to the immune infiltrate in patient's samples), we used the RPCA integration method provided in the R package Seurat to integrate them. The script that has been used to perform the integration is normalization_steps.R.
+
+
+
+
 
  
