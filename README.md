@@ -21,7 +21,7 @@ Fastqs were handled using the Single Cell pipeline of Gustave Roussy (v1.3). All
 
 An example of the files used to launch the pipeline is provided in this branch : run_CPN_NEG_disomique_IPS_CTRL_jour13_sans_stroma.sh and CPN_NEG_disomique_IPS_CTRL_jour13_sans_stroma.yaml
 
-For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in patient samples. For this reason, we have identified cells of the immune infiltrate in these samples and removed them (removal of these cells in the unormalized matrix without bad quality cells). The single-cell pipeline was launched again starting from the unormalized matrix without immune cells and bad quality cells. The table below gives the number of pca dimensions and the resolution of the clustering kept for each patient's sample without cells of the immune infiltrate.
+For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in patient samples. For this reason, we have identified cells of the immune infiltrate in these samples (annotations generated with the R package SingleR based on the dataset of Novershtern N et al. (2011)) and removed them (removal of these cells in the unormalized matrix without bad quality cells). The single-cell pipeline was launched again starting from the unormalized matrix without immune cells and bad quality cells. The table below gives the number of pca dimensions and the resolution of the clustering kept for each patient's sample without cells of the immune infiltrate.
 
 | Sample | Number of PCA dimensions | Resolution of the clustering |
 |--------|--------------------------|------------------------------|
