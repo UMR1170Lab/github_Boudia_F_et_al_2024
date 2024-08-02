@@ -34,12 +34,11 @@ For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in p
 Once all samples that we wanted to integrate have been properly handled (generation of a normalized matrix and removal of cells belonging to the immune infiltrate in patient's samples), we used the RPCA integration method provided in the R package Seurat to integrate them. The script that has been used to perform the integration is normalization_steps.R.
 
 
-#testing specific signature : use of the R function projection_signature_integration_v2
+## testing specific signature : use of the R function projection_signature_integration_v2
 
-These function allows to sort cells in two category : cells in which we can detect genes of the signature in a significant higher proportion than expected randomly and cells in whih the proportion of detected genes of the signature is not higher than expected randomly. To use this function, the following code should be previously run :
+This function allows to sort cells in two category : cells in which we can detect genes of the signature in a significant higher proportion than expected randomly and cells in whih the proportion of detected genes of the signature is not higher than expected randomly. To use this function, the following code should be previously run :
 
 ```
-
 require(purrr)
 
 require(Seurat)
@@ -52,7 +51,28 @@ source('/path/in/your/computer/of/df_rep_of_each_level_a_factor_in_each_level_an
 
 source('/path/in/your/computer/of/IndiceRepSignaturePval_v5.R')
 
+
 source('/path/in/your/computer/of/projection_signature_integration_v2.R')
+
+```
+
+For example to test the EG signature as tested in the article, run :
+
+```
+
+projection_signature_integration_v2(selected_integration,
+                                    normalized_individual_datasets,
+                                    interest_biological_signature = EGLFCupsup1[1:500],
+                                    path_signature_statut_cells_save_rds = "/path/in/your/computer/of/the/directory/where/you/want/to/store/your/output/file_that_will_store_the_classification_for_each_cells.rds" ,
+                                    name_biological_signature = "EG_LFCsup1_top500", 
+                                 
+minimal_prop_cells = 0.02,
+number_random_signa = 100,
+threshold_pval = 0.01,
+used_random_seed = 100,
+path_pdf_figures = "/path/in/your/computer/of/the/directory/where/you/want/to/store/your/output/file_containing_the_results_representation.pdf",
+width_pdf = 30,
+height_pdf = 30)
 
 
 ```
