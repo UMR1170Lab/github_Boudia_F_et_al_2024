@@ -56,26 +56,31 @@ source('/path/in/your/computer/of/projection_signature_integration_v2.R')
 
 ```
 
-For example to test the EG signature as tested in the article, run :
+For example to test the EG signature as done in the article, run :
 
 ```
+
+gene_up_EG_Seattle <- read.table("/path/in/your/computer/of/the/file/geneup_in_EG_compare_to_others_LFCsup1.gmx",h=T)
+
+EGLFCupsup1 <- gene_up_EG_Seattle$EGLFCupsup1[-1]
+
 
 projection_signature_integration_v2(selected_integration,
                                     normalized_individual_datasets,
                                     interest_biological_signature = EGLFCupsup1[1:500],
                                     path_signature_statut_cells_save_rds = "/path/in/your/computer/of/the/directory/where/you/want/to/store/your/output/file_that_will_store_the_classification_for_each_cells.rds" ,
                                     name_biological_signature = "EG_LFCsup1_top500", 
-                                 
-minimal_prop_cells = 0.02,
-number_random_signa = 100,
-threshold_pval = 0.01,
-used_random_seed = 100,
-path_pdf_figures = "/path/in/your/computer/of/the/directory/where/you/want/to/store/your/output/file_containing_the_results_representation.pdf",
-width_pdf = 30,
-height_pdf = 30)
+                                    minimal_prop_cells = 0.02,
+                                    number_random_signa = 100,
+                                    threshold_pval = 0.01,
+                                    used_random_seed = 100,
+                                    path_pdf_figures = "/path/in/your/computer/of/the/directory/where/you/want/to/store/your/output/file_containing_the_results_representation.pdf",
+                                    width_pdf = 30,
+                                    height_pdf = 30)
 
 
 ```
+
 
  
 
