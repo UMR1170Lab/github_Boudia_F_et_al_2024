@@ -21,7 +21,7 @@ Fastqs were handled using the Single Cell pipeline of Gustave Roussy (v1.3). All
 
 An example of the files used to launch the pipeline is provided in this branch : run_CPN_NEG_disomique_IPS_CTRL_jour13_sans_stroma.sh and CPN_NEG_disomique_IPS_CTRL_jour13_sans_stroma.yaml
 
-For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in patient samples. For this reason, we have identified cells of the immune infiltrate in these samples (annotations generated with the R package SingleR based on the dataset of Novershtern N et al. (2011)) and removed them (removal of these cells in the unormalized matrix without bad quality cells). The single-cell pipeline was launched again starting from the unormalized matrix without immune cells and bad quality cells. The table below gives the number of pca dimensions and the resolution of the clustering kept for each patient's sample without cells of the immune infiltrate.
+For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in patient samples. For this reason, we have identified cells of the immune infiltrate in these samples (annotations generated with the R package SingleR based on the dataset of Novershtern N et al. (2011)) and removed them (removal of these cells in the unormalized matrix without bad quality cells). The single-cell pipeline was launched again starting from the unormalized matrix without immune cells and bad quality cells. The table below gives the number of pca dimensions and the resolution of the clustering kept for each patient's sample without cells of the immune infiltrate. 
 
 | Sample | Number of PCA dimensions | Resolution of the clustering |
 |--------|--------------------------|------------------------------|
@@ -34,6 +34,30 @@ For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in p
 Once all samples that we wanted to integrate have been properly handled (generation of a normalized matrix and removal of cells belonging to the immune infiltrate in patient's samples), we used the RPCA integration method provided in the R package Seurat to integrate them. The script that has been used to perform the integration is normalization_steps.R.
 
 
+#testing specific signature : use of the R function projection_signature_integration_v2
+
+These function allows to sort cells in two category : cells in which we can detect genes of the signature in a significant higher proportion than expected randomly and cells in whih the proportion of detected genes of the signature is not higher than expected randomly. To use this function, the following code should be previously run :
+
+```
+
+require(purrr)
+
+require(Seurat)
+
+source('/path/in/your/computer/of/pvaldistri_v3.R')
+
+source('/path/in/your/computer/of/association_number_condition.R')
+
+source('/path/in/your/computer/of/df_rep_of_each_level_a_factor_in_each_level_another_factor.R')
+
+source('/path/in/your/computer/of/IndiceRepSignaturePval_v5.R')
+
+source('/path/in/your/computer/of/projection_signature_integration_v2.R')
+
+
+```
+
+ 
 
 
 
