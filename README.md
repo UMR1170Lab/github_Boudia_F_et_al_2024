@@ -1,4 +1,4 @@
-#ATACseq
+# ATACseq
 
 
 ## nfcore pipeline for ATACseq
