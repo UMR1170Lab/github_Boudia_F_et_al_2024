@@ -15,9 +15,9 @@ Fastqs were handled using the Single Cell pipeline of Gustave Roussy (v1.3). All
 |CPN EG 2| 85 | 1.3 |
 |NSG 441 |87  | 1.5 |
 |NSG IL 514| 85 |1.3|
-|patient C  (AML64) | 91 | 0.9 |
-|patient A (GHER) | 95 | 0.9 |
-|patient B  CONECT| 73 |1.4|
+|patient C | 91 | 0.9 |
+|patient A | 95 | 0.9 |
+|patient B | 73 |1.4|
 
 An example of the files used to launch the pipeline is provided in this branch : run_CPN_NEG_disomique_IPS_CTRL_jour13_sans_stroma.sh and CPN_NEG_disomique_IPS_CTRL_jour13_sans_stroma.yaml
 
@@ -25,9 +25,9 @@ For our study, only cells carrying the ETO2-GLIS2 mutation were of interest in p
 
 | Sample | Number of PCA dimensions | Resolution of the clustering |
 |--------|--------------------------|------------------------------|
-|patient C (AML64) | 77 | 0.8 |
-|patient A (GHER) | 91 | 0.8 |
-|patient B (CONECT) | 93 | 0.8 |
+|patient C  | 77 | 0.8 |
+|patient A  | 91 | 0.8 |
+|patient B  | 93 | 0.8 |
 
 ## Integration of all the Single-Cell samples
 
