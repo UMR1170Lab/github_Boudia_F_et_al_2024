@@ -1,0 +1,83 @@
+pathdir <- "/path/to/analysis_all_samples/deseq2/vs/FDR_001"
+pathoutputbed <- "/path/to/analysis_all_samples/deseq2/vs/FDR_001_sorted"
+fileindir <- list.files(pathdir)
+fileindir
+liste_fichier <- lapply(1:length(fileindir),
+                        purrr::possibly(function(z){
+                        #lecture du bed  
+                        
+                        # print(paste0(pathdir,"/",fileindir[z]))  
+                        
+                        #lecture du fichier    
+                        data_to_read <-  read.table(paste0(pathdir,"/",fileindir
+[z]),h=FALSE)
+                        
+                        # on classe les résultats dans une liste
+                        resultlist <- list(data_to_read[which(data_to_read[["V5"
+]] > 1),],
+                                           data_to_read[which(data_to_read[["V5"
+]] < -1),])
+                          
+                         #tri des fichiers bed en fct des LFC
+                         resultlist <- lapply(resultlist,purrr::possibly(function(i){
+                          
+                          dplyr::arrange(i,desc(abs(V5)))
+                          
+                        },"tri_impossible"))
+                        
+                        #attribution de noms aux éléments de la list result_list
+                        nom_resultlist <- c(paste0(strsplit(fileindir[z],"vs")[[1]][1],"_up_as_compare_to_",strsplit(fileindir[z],"vs")[[1]][2]),
+                                               paste0(strsplit(fileindir[z],"vs")[[1]][1],"_down_as_compare_to_",strsplit(fileindir[z],"vs")[[1]][2]))
+                        
+                        
+                        # print(unlist(strsplit(nom_resultlist,".mLb.clN.deseq2.FDR0.01.results.bed")))
+                        names(resultlist) <- unlist(strsplit(nom_resultlist,".mLb.clN.deseq2.FDR0.01.results.bed")) 
+                        # print(names(resultlist))
+                        
+                        # print(c(paste0(strsplit(fileindir[z],"vs")[[1]][1],"_up_as_compare_to_",strsplit(fileindir[z],"vs")[[1]][2])))
+                        
+                        # print(names(resultlist))
+                        
+                        # nom_resultlist
+                        dir.create(paste0(pathoutputbed,"/",unlist(strsplit(fileindir[z],".mLb.clN.deseq2.FDR0.01.results.bed"))))
+                        
+                        if(class(resultlist[1])=="character"){#accolade ouvrante instructions si aucun dataframe existant
+                        print("aucun fichier à exporter")
+                        
+                        #accolade fermante instructions si aucun dataframe existant
+                        }else{
+ 
+                        #accolade ouvrante instructions si dataframe existant
+                         
+                        # écriture des beds 
+                        write.table(resultlist[1],paste0(pathoutputbed,"/",unlist(strsplit(fileindir[z],".mLb.clN.deseq2.FDR0.01.results.bed")),"/",names(resultlist)[1],".bed"),
+                        row.names = FALSE,
+                        col.names = FALSE,
+                        quote = FALSE,
+                        sep="\t")
+                        #accolade fermante instructions si dataframe existant
+                        }
+                        # écriture des beds
+  
+                      if(class(resultlist[2])=="character"){
+                       ######### accolades ouvrantes instructions si aucun dataframe à exporter                       
+                       print("aucun fichier à exporter")
+                       ######### accolades fermantes instructions si aucun dataframe à exporter
+                      }else{
+                       
+                      ######## accolade ouvrante instruction si dataframe à exporter
+                      write.table(resultlist[2],paste0(pathoutputbed,"/",unlist(strsplit(fileindir[z],".mLb.clN.deseq2.FDR0.01.results.bed")),"/",names(resultlist)[2],".bed"),
+                                    row.names = FALSE,
+                                    col.names = FALSE,
+                                    quote = FALSE,
+                                    sep="\t")
+                       ######## accolade fermante instruction si dataframe à exporter. 
+                       }
+                         
+                        #suppression de la list générée précédemment 
+                        rm(resultlist)
+                        rm(nom_resultlist)
+                          
+                        },"error_execution"))
+
+
