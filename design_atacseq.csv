@@ -1,0 +1,13 @@
+group,replicate,fastq_1,fastq_2
+CB_CTRL,1,/path/to/CB1_CTRL_A_S1_R1_001.fastq.gz,/path/to/CB1_CTRL_A_S1_R2_001.fastq.gz
+CB_CTRL,2,/path/to/CB1_CTRL_B_S2_R1_001.fastq.gz,/path/to/CB1_CTRL_B_S2_R2_001.fastq.gz
+CB_CTRL,3,/path/to/CB1_CTRL_C_S3_R1_001.fastq.gz,/path/to/CB1_CTRL_C_S3_R2_001.fastq.gz
+CB_CTRL,4,/path/to/CB2_CTRL_B_S8_R1_001.fastq.gz,/path/to/CB2_CTRL_B_S8_R2_001.fastq.gz
+CB_CTRL,5,/path/to/CB2_CTRL_A_S7_R1_001.fastq.gz,/path/to/CB2_CTRL_A_S7_R2_001.fastq.gz
+CB_DLX3,1,/path/to/CB1_DLX3_A_S4_R1_001.fastq.gz,/path/to/CB1_DLX3_A_S4_R2_001.fastq.gz
+CB_DLX3,2,/path/to/CB1_DLX3_B_S5_R1_001.fastq.gz,/path/to/CB1_DLX3_B_S5_R2_001.fastq.gz
+CB_DLX3,3,/path/to/CB1_DLX3_C_S6_R1_001.fastq.gz,/path/to/CB1_DLX3_C_S6_R2_001.fastq.gz
+CB_DLX3,4,/path/to/CB2_DLX3_A_S9_R1_001.fastq.gz,/path/to/CB2_DLX3_A_S9_R2_001.fastq.gz
+CB_DLX3,5,/path/to/CB2_DLX3_B_S10_R1_001.fastq.gz,/path/to/CB2_DLX3_B_S10_R2_001.fastq.gz
+CB_DLX3,6,/path/to/CB2_DLX3_C_S11_R1_001.fastq.gz,/path/to/CB2_DLX3_C_S11_R2_001.fastq.gz
+
