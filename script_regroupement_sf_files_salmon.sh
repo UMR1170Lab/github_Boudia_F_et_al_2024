@@ -10,11 +10,11 @@
 #################### Variables ##################
 
 #path du dossier contenant les fichiers de quantification .sf de Salmon.
-path_quantif_file="/mnt/beegfs/userdata/e_robert/DLX3_sh_RNAseq/output_quantification_salmon" 
+path_quantif_file="/path/to/output/quantification/output_quantification_salmon" 
 
 #path dossier où vont être regrouper les fichiers de quantification.
 
-path_sf_files_groupir="/mnt/beegfs/userdata/e_robert/DLX3_sh_RNAseq/regroupement_fichiers_sf_quantification_salmon"
+path_sf_files_groupir="/path/to/directory/regroupement_fichiers_sf_quantification_salmon"
 
 
 ################### code à exécuter #####################
