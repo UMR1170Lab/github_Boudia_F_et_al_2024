@@ -36,7 +36,7 @@ Once all samples that we wanted to integrate have been properly handled (generat
 
 ## testing specific signature : use of the R function projection_signature_integration_v2
 
-This function allows to sort cells in three categories : 1) cells in which the proportion of detected genes (normalized count>0) of a given signature is higher than expected randomly, 2) cells in which the proportion of detected genes of the signature is not higher than expected randomly and 3) cells in which the proportion of detected genes of a signature is lower than expected randomly. To use this function, the following code should be previously run :
+This function allows to sort cells in three categories : 1) cells in which the proportion of detected genes (normalized counts > 0) of a given signature is higher than expected randomly, 2) cells in which the proportion of detected genes of the signature is not higher than expected randomly and 3) cells in which the proportion of detected genes of a signature is lower than expected randomly. To use this function, the following code should be previously run :
 
 ```
 require(purrr)
@@ -82,7 +82,10 @@ projection_signature_integration_v2(selected_integration,
 ```
 
 
- 
+If you use this method in your own publications, please cite : Brahim Arkoun, Elie Robert, Fabien Boudia, Stefania Mazzi, Virginie Dufour, Aurélie Siret, Yasmine Mammasse, Zakia Aid, Matthieu Vieira, Aygun Imanci, Marine Aglave, Marie Cambot, Rachel Petermann, Sylvie Souquere, Philippe Rameau, Cyril Catelain, Romain Diot, Gérard Tachdjian, Olivier Hermine, Nathalie Droin, Najet Debili, Isabelle Plo, Sébastien Malinge, Eric Soler, Hana Raslova, Thomas Mercher, and William Vainchenker. Stepwise GATA1 and SMC3 mutations alter megakaryocyte differentiation in a Down syndrome leukemia model. The Journal of Clinical Investigation, 132(14), 4 2023. 
+
+
+
 
 
 
