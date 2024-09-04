@@ -36,7 +36,7 @@ Once all samples that we wanted to integrate have been properly handled (generat
 
 ## testing specific signature : use of the R function projection_signature_integration_v2
 
-This function allows to sort cells in three category : "This function allows to sort cells in three category: 1-cells in which the proportion of detected genes (normalized count>0) of a given signature is higher than expected randomly, 2-cells in which the proportion of detected genes of the signature is not higher than expected randomly and 3-cells in which the proportion of detected genes of a signature is lower than expected randomly. To use this function, the following code should be previously run :
+This function allows to sort cells in three categories : 1) cells in which the proportion of detected genes (normalized count>0) of a given signature is higher than expected randomly, 2) cells in which the proportion of detected genes of the signature is not higher than expected randomly and 3) cells in which the proportion of detected genes of a signature is lower than expected randomly. To use this function, the following code should be previously run :
 
 ```
 require(purrr)
